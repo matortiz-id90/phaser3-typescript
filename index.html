@@ -5,12 +5,20 @@
     <meta name="author" content="digitsensitive">
     <title>phaser3-typescript</title>
     <link rel="stylesheet" type="text/css" href="styles/css/styles.css">
-    <script src="dist/bundle.js"></script>
   </head>
   <body>
     <div class="container">
       <h1>phaser3-typescript</h1>
       <div id="game"></div>
     </div>
+    <script>
+      var _script = document.createElement('script');
+      if (location.href.indexOf("flappybird") != -1) {
+        _script.src = 'dist/flappybird.js';
+      } else {
+        _script.src = 'dist/spaceinvaders.js';
+      }
+      document.body.appendChild(_script);
+    </script>
   </body>
 </html>
