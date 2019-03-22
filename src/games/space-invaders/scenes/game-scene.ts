@@ -22,6 +22,10 @@ export class GameScene extends Phaser.Scene {
     this.enemies = this.add.group({ runChildUpdate: true });
   }
 
+  preload() {
+    this.load.image("hotdog", "assets/tv.png");
+  }
+
   create(): void {
     // create game objects
     this.player = new Player({
@@ -77,7 +81,7 @@ export class GameScene extends Phaser.Scene {
       this.checkCollisions();
     }
 
-    if (this.registry.get("lives") < 0 || this.enemies.getLength() === 0) {
+    if (this.registry.get("lives") < 1 || this.enemies.getLength() === 0) {
       window.close();
       this.scene.start("MenuScene");
       this.scene.stop("HUDScene");
@@ -92,6 +96,7 @@ export class GameScene extends Phaser.Scene {
       null,
       this
     );
+    this.physics.overlap(this.enemies, this.player, this.bulletHitPlayer);
   }
 
   private bulletHitEnemy(bullet, enemy): void {
