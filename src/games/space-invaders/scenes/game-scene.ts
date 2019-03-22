@@ -78,6 +78,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     if (this.registry.get("lives") < 0 || this.enemies.getLength() === 0) {
+      window.close();
       this.scene.start("MenuScene");
       this.scene.stop("HUDScene");
     }
