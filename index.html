@@ -1,22 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="author" content="digitsensitive">
+    <meta name="author" content="digitsensitive" />
     <title>phaser3-typescript</title>
-    <link rel="stylesheet" type="text/css" href="styles/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/css/styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>phaser3-typescript</h1>
+      <h1>You've found an easter egg!!</h1>
+      <!-- <img src="assets/tv.png" alt="Its an old TV" /> -->
       <div id="game"></div>
     </div>
     <script>
-      var _script = document.createElement('script');
+      var _script = document.createElement("script");
+      var game = document.getElementById("game");
       if (location.href.indexOf("flappybird") != -1) {
-        _script.src = 'dist/flappybird.js';
+        _script.src = "dist/flappybird.js";
+        game.className = "flappy";
       } else {
-        _script.src = 'dist/spaceinvaders.js';
+        _script.src = "dist/spaceinvaders.js";
       }
       document.body.appendChild(_script);
     </script>
