@@ -20,7 +20,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, './'),
     publicPath: '/dist/',
-    host: '127.0.0.1',
+    host: 'dev.id90travel.com',
     port: 8080,
     open: true
   },
